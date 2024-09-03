@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100vw; /* ocupa 100% da largura */
+  height: 100vh; /* ocupa 100% da altura */
+  background: #fafafa; /* cor de fundo */
+  display: flex; /* permite ajustar a exibição do item na tela */
+  justify-content: center; /* alinha os itens ao centro horizontalmente  */
+  align-items: center; /* alinha os itens ao centro verticalmente */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container-imagens {
+  position: relative; /* o elemento pai sendo position relativo, faz com que o filho (troca-img-celular - position absolute) se movimente junto */
+}
+.img-celular {
+  width: 410px; /*largura da imagem em pixel*/
+}
+
+.troca-img-celular {
+  height: 480px;
+  position: absolute; /* o elemento fica em uma posição absoluta / deixando as duas img uma sobre a outra*/
+  left: 137px; /* movimenta para esquerda */
+  top: 20px;
+  transition: opacity 1s ease-in-out;
+}
+
+.container-itens {
+  width: 350px; /*largura da imagem em pixel*/
+}
+
+.container-form {
+  display: flex; /* permite ajustar a exibição do item na tela */
+  flex-direction: column; /* deixa os itens um em baixo do outro*/
+  background: #ffffff;
+  border: 1px solid #dbdbdb; /* 1º parametro é a espessura da borda/ 2º o tipo / 3º a cor */
+  padding: 50px 40px 20px 40px; /* 50px em cima / 40px direita / 20px em baixo / 40px esquerda*/
+
+  align-items: center; /* centraliza os itens dentro do container */
+  width: 300px; /* Define uma largura para o formulário */
+}
+
+.container-form input,
+.container-form button {
+  width: 100%; /* Faz os inputs e o botão ocuparem toda a largura do container-form */
+  margin-bottom: 10px; /* margem inferior entre os elementos */
+}
+
+.container-form a {
+  display: block;
+  text-align: center;
+}
+
+input {
+  height: 36px; /* altura */
+  outline: none; /*retira a linha azul ao selecionar o input */
+  border: 1px solid #dbdbdb;
+  border-radius: 3px; /* cantos das bordas arredondados*/
+  padding-left: 5px; /* espaçamento a esquerda */
+  margin-top: 5px; /* margem supeior*/
+  color: #262626; /* cor do texto */
+}
+
+input::placeholder {
+  font-size: 10px; /* Define o tamanho da fonte do texto do placeholder */
+}
+
+button {
+  background: #0095f6;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  color: #ffffff;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s; /* Animação de opacidade */
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+a {
+  transition: opacity 0.3s; /* Animação de opacidade */
+}
+
+a:hover {
+  opacity: 0.5; /* Reduz a opacidade ao passar o mouse */
+}
+
+/* estilização da linha do OU */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 15px 0; /* margem acima e abaixo da linha */
+  width: 100%; /* Faz com que a linha ocupe toda a largura do container */
+}
+
+.divider::before,
+.divider::after {
+  content: ""; /* Cria o pseudo-elemento ::before sem texto */
+  flex: 1; /* Faz com que o pseudo-elemento cresça e ocupe o espaço disponível */
+  border-bottom: 1px solid #dbdbdb; /* Cor e espessura da linha */
+}
+
+.divider span {
+  padding: 0 10px; /* Espaçamento ao redor do texto */
+  font-size: 12px; /* Tamanho da fonte do texto */
+  color: #262626; /* Cor do texto */
+}
+
+/* fim da estilização da linha e do OU */
+
+.insta-logo {
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+.login-facebook {
+  cursor: pointer;
+  font-size: 13px;
+  color: #385185;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.nova-senha {
+  cursor: pointer;
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 12px;
+  color: #385185;
+}
+
+.container-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  border: 1px solid #dbdbdb;
+  width: 300px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.container-cadastro a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+span {
+  color: #0095f6;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.obtenha-app {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-left: -10px;
+}
+
+.container-app {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+.img-footer {
+  width: 250px;
+}
+
+/* aplicando responsividade */
+/* Responsividade para Tablets (telas com largura entre 600px e 1024px) */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column; /* Empilha as seções verticalmente em telas menores */
+    padding: 20px; /* Adiciona um padding ao redor do conteúdo */
+  }
+
+  .container-imagens {
+    margin-bottom: 20px; /* Espaçamento entre as seções */
+  }
+
+  .img-celular {
+    width: 300px; /* Ajusta a largura da imagem do celular  */
+  }
+
+  .troca-img-celular {
+    height: 360px; /* Ajusta a altura das imagens de troca  */
+    left: 98px; /* Reposiciona a imagem de troca  */
+    top: 13px; /* Ajusta o espaçamento superior */
+  }
+
+  .container-itens {
+    width: 320px; /* Reduz a largura da seção de itens  */
+  }
+
+  .container-form {
+    width: 280px; /* Reduz a largura do formulário  */
+    padding: 40px 30px 20px 30px; /* Ajusta o padding do formulário */
+  }
+
+  .container-cadastro,
+  .container-app {
+    width: 280px; /* Ajusta a largura */
+  }
+
+  .img-footer {
+    width: 220px; /* Ajusta a largura da imagem do footer  */
+  }
+}
+
+/* Responsividade para Celulares (telas com largura até 600px) */
+@media (max-width: 600px) {
+  main {
+    padding: 10px; /* Reduz o padding para telas menores */
+  }
+
+  .img-celular {
+    width: 250px; /* Ajusta a largura da imagem  */
+  }
+
+  .troca-img-celular {
+    height: 300px; /* Ajusta a altura das imagens de troca  */
+    left: 82px; /* Reposiciona a imagem de troca  */
+    top: 9px; /* Ajusta o espaçamento superior */
+  }
+
+  .container-itens {
+    width: 280px; /* Reduz a largura da seção de itens  */
+  }
+
+  .container-form {
+    width: 260px; /* Reduz a largura do formulário  */
+    padding: 30px 20px 15px 20px; /* Ajusta o padding do formulário */
+  }
+
+  .container-cadastro,
+  .container-app {
+    width: 260px; /* Ajusta a largura */
+  }
+
+  .img-footer {
+    width: 200px; /* Ajusta a largura da imagem do footer */
+  }
+
+  input {
+    height: 32px; /* Ajusta a altura dos inputs  */
+    font-size: 12px; /* Ajusta o tamanho da fonte dos inputs  */
+  }
+
+  button {
+    height: 28px; /* Ajusta a altura do botão  */
+    font-size: 12px; /* Ajusta o tamanho da fonte do botão  */
+  }
+
+  .insta-logo {
+    width: 150px; /* Reduz o tamanho da logo  */
+  }
+
+  .login-facebook,
+  .nova-senha {
+    font-size: 11px; /* Ajusta o tamanho da fonte dos links  */
+  }
+
+  .obtenha-app {
+    font-size: 12px; /* Ajusta o tamanho da fonte  */
+  }
+}
