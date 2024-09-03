@@ -225,13 +225,13 @@ span {
 
   .img-celular {
     width: 250px; /* Ajusta a largura da imagem  */
-    margin-top: 50px;
+    margin-top: 70px;
   }
 
   .troca-img-celular {
     height: 300px; /* Ajusta a altura das imagens de troca  */
     left: 82px; /* Reposiciona a imagem de troca  */
-    top: 60px; /* Ajusta o espaçamento superior */
+    top: 80px; /* Ajusta o espaçamento superior */
   }
 
   .container-itens {
